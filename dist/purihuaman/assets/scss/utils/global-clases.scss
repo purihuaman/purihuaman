@@ -1,0 +1,25 @@
+.z-back {
+	z-index: var(--z-back);
+}
+
+.title-1 {
+	font-size: clamp(42px, 52px, 2vw);
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+.txt-decoration-none {
+	text-decoration: none;
+}
+
+.animation {
+	--puri-transi-property: background-color, border-color, text-decoration-color,
+		fill, stroke, box-shadow, mix-blend-mode;
+	--puri-transi-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
+	--puri-transi-duration: 0.8s;
+
+	transition: var(--puri-transi-property),
+		var(--puri-transi-duration) var(--puri-transi-timing-func);
+}

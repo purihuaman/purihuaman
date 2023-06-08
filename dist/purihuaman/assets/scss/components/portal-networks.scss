@@ -1,0 +1,73 @@
+.portal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: var(--z-modal);
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: transform 0.5s;
+	transform: scale(0);
+
+	background-color: var(--slate-rgba);
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-color: var(--second-bg);
+	border: 1px solid var(--border-color);
+	padding: var(--n-padding);
+	border-radius: var(--n-radius);
+	min-width: 320px;
+	max-width: 480px;
+	min-height: 220px;
+	max-height: 600px;
+	overflow-y: auto;
+
+	& div {
+		margin-bottom: auto;
+	}
+}
+
+.title {
+	margin-bottom: auto;
+	text-align: center;
+	width: 100%;
+}
+
+.isOpen {
+	transform: scale(1);
+}
+
+.closeBtn {
+	position: absolute;
+	top: var(--s-margin);
+	right: var(--s-margin);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: min-content;
+	padding: var(--s-padding);
+	border-radius: var(--s-radius);
+	cursor: pointer;
+	color: var(--slate-300);
+	transition: background-color, color,
+		var(--transi-timing-func) var(--transi-duration);
+
+	&:active i,
+	&:hover i {
+		transform: scale(0.98);
+		color: var(--red-600);
+		fill: var(--red-600);
+	}
+
+	& i {
+		font-size: 1.5em;
+	}
+}

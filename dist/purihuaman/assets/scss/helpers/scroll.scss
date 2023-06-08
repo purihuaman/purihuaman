@@ -1,0 +1,43 @@
+/* Estilos de scrool */
+
+$scroll-size: 8px;
+$track-bg: var(--puri-dark-rgba);
+$thumb-bg: var(--puri-link-color);
+$thumb-hover: var(--puri-link-hover-color);
+$scroll-radius: var(--puri-s-radius);
+$time-bg: var(--puri-max-time);
+
+*,
+html {
+	scrollbar-width: thin;
+
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+
+	&::-webkit-scrollbar {
+		width: $scroll-size;
+		height: $scroll-size;
+	}
+
+	&::-webkit-scrollbar-track,
+	&::-webkit-scrollbar-corner {
+		background-color: $track-bg;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $thumb-bg;
+		border-radius: $scroll-radius;
+		transition: background-color $time-bg ease-in-out;
+
+		&:hover,
+		&:active {
+			background-color: $thumb-hover;
+		}
+	}
+
+	&::-webkit-scrollbar-button:increment,
+	&::-webkit-scrollbar-button {
+		display: none;
+	}
+}

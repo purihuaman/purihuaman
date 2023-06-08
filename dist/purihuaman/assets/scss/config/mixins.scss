@@ -1,0 +1,297 @@
+$breakpoints: (
+	small: 360px,
+	medium: 640px,
+	large: 1024px,
+	xlarge: 1200px,
+);
+
+@mixin responsive($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	} @else {
+		@media screen and (min-width: $breakpoint) {
+			@content;
+		}
+	}
+}
+
+// MIXIN FONTS
+$font-sizes: (
+	1: 2.5,
+	2: 2,
+	3: 1.75,
+	4: 1.5,
+	5: 1.25,
+	6: 1,
+);
+
+$font-size-base: 1rem;
+
+// @mixin clases-fuente($mapa-font-sizes) {
+// 	@each $numero, $size in $mapa-font-sizes {
+// 		.fs-h#{$numero} {
+// 			font-size: calc(($font-size-base * $size) + 0.5vw);
+// 		}
+// 	}
+// }
+
+// :root {
+// 	@include clases-fuente($font-sizes);
+// }
+
+// TODO: Flex
+
+$flexProperties: (
+	position: (
+		"relative": relative,
+		"absolute": absolute,
+		"fixed": fixed,
+		"static": static,
+		"sticky": sticky,
+	),
+	top: (
+		"top-0": 0,
+	),
+	bottom: (
+		"bottom-0": 0,
+	),
+	left: (
+		"left-0": 0,
+	),
+	right: (
+		"right-0": 0,
+	),
+
+	// Margins
+	margin:
+		(
+			"mx-auto": 0 auto,
+			"my-auto": auto 0,
+		),
+	margin-top: (
+		"mt-auto": auto,
+	),
+	margin-right: (
+		"mr-auto": auto,
+	),
+	margin-bottom: (
+		"mb-auto": auto,
+	),
+	margin-left: (
+		"ml-auto": auto,
+	),
+
+	// Paddings
+	padding:
+		(
+			"px-auto": 0 auto,
+			"py-auto": auto 0,
+		),
+	padding-top: (
+		"pt-auto": auto,
+	),
+	padding-right: (
+		"pr-auto": auto,
+	),
+	padding-bottom: (
+		"pb-auto": auto,
+	),
+	padding-left: (
+		"pl-auto": auto,
+	),
+	text-align: (
+		"txt-center": center,
+		"txt-left": left,
+		"txt-right": right,
+	),
+	display: (
+		"block": block,
+		"in-block": inline-block,
+		"in-flex": inline-flex,
+		"flex": flex,
+		"grid": grid,
+	),
+	flex-direction: (
+		"flex-row": row,
+		"flex-row-reverse": row-reverse,
+		"flex-col": column,
+		"flex-col-reverse": column-reverse,
+	),
+	flex-wrap: (
+		"flex-nowrap": nowrap,
+		"flex-wrap": wrap,
+	),
+	align-items: (
+		"align-center": center,
+		"align-start": flex-start,
+		"align-end": flex-end,
+		"align-stretch": stretch,
+		"align-baseline": baseline,
+	),
+	justify-content: (
+		"justify-center": center,
+		"justify-start": flex-start,
+		"justify-end": flex-end,
+		"justify-between": space-between,
+		"justify-around": space-around,
+		"justify-evenly": space-evenly,
+	),
+	align-content: (
+		"align-content-center": center,
+		"align-content-start": flex-start,
+		"align-content-end": flex-end,
+		"align-content-around": space-around,
+		"align-content-between": space-between,
+		"align-content-stretch": stretch,
+	),
+	justify-items: (
+		"justify-items-center": center,
+		"justify-items-start": start,
+		"justify-items-end": end,
+		"justify-items-stretch": stretch,
+	),
+	align-self: (
+		"self-center": center,
+		"self-start": flex-start,
+		"self-end": flex-end,
+		"self-baseline": baseline,
+		"self-stretch": stretch,
+		"self-self-start": self-start,
+		"self-self-end": self-end,
+		"self-revert": revert,
+	),
+);
+
+@mixin generate-classes($map) {
+	@each $class, $properties in $map {
+		@each $property, $value in $properties {
+			.#{$property} {
+				#{$class}: $value;
+			}
+
+			@include responsive(medium) {
+				.#{"md-" + $property} {
+					#{$class}: $value !important;
+				}
+			}
+
+			@include responsive(large) {
+				.#{"lg-" + $property} {
+					#{$class}: $value !important;
+				}
+			}
+		}
+	}
+}
+
+$spaces: (
+	"0": var(--puri-cero),
+	"s": var(--puri-small),
+	"n": var(--puri-normal),
+	"m": var(--puri-medium),
+	"l": var(--puri-large),
+	"x": var(--puri-xlarge),
+	"xl": var(--puri-xxlarge),
+);
+
+@mixin space-generator($map, $option, $property, $gap: false) {
+	@each $key, $value in $map {
+		@if $gap {
+			.gap-#{$key} {
+				gap: $value;
+			}
+		}
+
+		.#{$option}-#{$key} {
+			#{$property}: $value;
+		}
+		.#{$option + "y"}-#{$key} {
+			#{$property+"-top"}: $value;
+			#{$property+"-bottom"}: $value;
+		}
+		.#{$option + "x"}-#{$key} {
+			#{$property+"-left"}: $value;
+			#{$property+"-right"}: $value;
+		}
+		.#{$option + "t"}-#{$key} {
+			#{$property+"-top"}: $value;
+		}
+		.#{$option + "r"}-#{$key} {
+			#{$property+"-right"}: $value;
+		}
+		.#{$option + "b"}-#{$key} {
+			#{$property+"-bottom"}: $value;
+		}
+		.#{$option + "l"}-#{$key} {
+			#{$property+"-left"}: $value;
+		}
+
+		@include responsive(medium) {
+			.#{"md-" + $option}-#{$key} {
+				#{$property}: $value;
+			}
+		}
+	}
+}
+
+@include space-generator($spaces, "m", "margin", true);
+@include space-generator($spaces, "p", "padding");
+@include generate-classes($flexProperties);
+
+@function rem($px) {
+	@return ($px / 16px) * 1rem;
+}
+
+// CSS variables for typography
+:root {
+	// Font sizes
+	--h1-font-size: 24px;
+	--h2-font-size: 20px;
+	--h3-font-size: 16px;
+	--normal-font-size: 16px;
+	--small-font-size: 13px;
+	--smaller-font-size: 12px;
+	--heading-line-height: 1.3;
+	--body-line-height: 1.6;
+
+	// Font sizes from lg breakpoint (64em ~ 1024px)
+	@include responsive(large) {
+		--h1-font-size: 36px;
+		--h2-font-size: 24px;
+		--h3-font-size: 20px;
+		--normal-font-size: 16px;
+		--small-font-size: 14px;
+		--smaller-font-size: 13px;
+	}
+}
+
+.h1,
+h1 {
+	font-size: var(--h1-font-size);
+}
+
+.h2,
+h2 {
+	font-size: var(--h2-font-size);
+}
+
+.h3,
+h3 {
+	font-size: var(--h3-font-size);
+}
+
+body,
+.normal {
+	font-size: var(--normal-font-size);
+}
+
+small,
+.small {
+	font-size: var(--small-font-size);
+}
+
+.smaller {
+	font-size: var(--smaller-font-size);
+}

@@ -1,0 +1,23 @@
+// ==> Config <==
+@import "./config/mixins.scss";
+@import "./config/vars.scss";
+
+// ==> Base <==
+@import "./base/normalize.scss";
+@import "./base/base.scss";
+
+// ==> Theme <==
+@import "./theme/colors.scss";
+
+// ==> Components <==
+@import "./components/svg-icons.scss";
+@import "./components/buttons.scss";
+
+// ==> Helpers <==
+@import "./helpers/scroll.scss";
+@import "./helpers/animations.scss";
+
+// ==> Utils <==
+@import "./utils/global-clases.scss";
+
+/* radial-gradient(40% 100% at 49.3% 0%,rgba(50,39,95,.6) 0%,rgba(22,22,24,0) 100%); */

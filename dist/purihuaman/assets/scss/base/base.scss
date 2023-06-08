@@ -1,0 +1,34 @@
+// ==> Estilos base <==
+*,
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading-font {
+	font-family: var(--heading-font);
+}
+
+body,
+.main-font {
+	font-family: var(--main-font);
+}
+
+.content {
+	--puri-gutter: 1rem;
+	width: 100%;
+	max-width: var(--puri-max-width);
+	min-width: var(--puri-min-width);
+	margin: 0 auto;
+	padding-left: var(--puri-gutter);
+	padding-right: var(--puri-gutter);
+}
