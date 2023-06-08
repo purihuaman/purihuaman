@@ -1,0 +1,17 @@
+<section id="services" #sectionRef>
+	<div class="content">
+		<section class="services">
+			<section class="">
+				<h2 class="txt-center mb-l h2">¿Qué te ofrezco?</h2>
+
+				<!-- Contenedor de card -->
+
+				<div class="grid gap-l services__content">
+					<ng-container *ngFor="let service of serviceList">
+						<app-service-card [service]="service"></app-service-card>
+					</ng-container>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>

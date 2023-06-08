@@ -1,0 +1,9 @@
+.credits {
+	color: var(--puri-dark-500);
+
+	&__icon {
+		color: var(--puri-danger-500);
+		animation: scaleAnimation var(--puri-animation-time) ease-in-out infinite;
+		will-change: transform;
+	}
+}

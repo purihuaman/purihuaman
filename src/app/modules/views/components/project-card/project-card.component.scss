@@ -1,0 +1,33 @@
+.card {
+	height: 100%;
+	color: var(--puri-color);
+	border: 1px solid var(--puri-dark-100);
+	border-radius: var(--puri-s-radius);
+	box-shadow: var(--puri-dark-shadow);
+	overflow: hidden;
+
+	&__image {
+		aspect-ratio: 16 / 9;
+	}
+
+	&__date {
+		color: var(--puri-dark-400);
+	}
+
+	&__links {
+		flex: 1;
+
+		& a {
+			color: var(--puri-primary-500);
+			transition: color var(--puri-max-time) var(--puri-transi-timing-func);
+
+			&:hover {
+				color: var(--puri-primary-600);
+			}
+		}
+	}
+
+	&__author {
+		flex: 1;
+	}
+}

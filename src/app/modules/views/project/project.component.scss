@@ -1,0 +1,15 @@
+.projects {
+	min-height: calc(100vh - var(--puri-header-height));
+	padding-top: var(--puri-header-height);
+
+	&__content {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	}
+}
+
+.error-message {
+	background-color: var(--puri-danger-rgba);
+	color: var(--puri-danger-500);
+	border: var(--puri-border-width) var(--puri-border-style);
+	border-radius: var(--puri-s-radius);
+}

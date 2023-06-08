@@ -1,0 +1,9 @@
+<article class="card animation">
+	<img [src]="service.image" class="block card__image" [alt]="service.title" />
+	<div class="p-m card__body">
+		<h4 class="txt-center mb-s card__title">
+			{{ service.title | titlecase }}
+		</h4>
+		<p class="card__description">{{ service.description }}</p>
+	</div>
+</article>

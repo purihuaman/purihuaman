@@ -1,0 +1,13 @@
+<div class="toggle">
+	<div
+		class="flex align-center justify-center toggle__icon"
+		(click)="changeTheme()"
+	>
+		<span class="icon cross-center">
+			<svg class="svg-icon svg-icon--md">
+				<use *ngIf="isDarkTheme" href="/assets/icons/icons.svg#sun" />
+				<use *ngIf="!isDarkTheme" href="/assets/icons/icons.svg#moon" />
+			</svg>
+		</span>
+	</div>
+</div>

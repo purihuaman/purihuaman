@@ -1,0 +1,22 @@
+<section id="projects">
+	<div class="content">
+		<section class="projects">
+			<h2 class="txt-center mb-l h2">Proyectos!</h2>
+
+			<!-- Loader -->
+			<app-loading *ngIf="!loading"></app-loading>
+			<div *ngIf="isError" class="txt-center p-m error-message">
+				<small>{{ errorMessage }}</small>
+			</div>
+
+			<!-- Project cards -->
+			<ng-container *ngIf="loading">
+				<section class="grid gap-m projects__content">
+					<ng-container *ngFor="let repository of projects">
+						<app-project-card [project]="repository"></app-project-card>
+					</ng-container>
+				</section>
+			</ng-container>
+		</section>
+	</div>
+</section>

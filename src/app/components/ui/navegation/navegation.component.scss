@@ -1,0 +1,77 @@
+.menu {
+	z-index: var(--puri-z-fixed);
+	width: 100%;
+	transition: transform var(--puri-min-time) ease-out;
+	transform: translateY(-100vh);
+	background-color: var(--puri-background);
+	border: 1px solid var(--puri-primary-rgba);
+	border-radius: var(--puri-n-radius);
+
+	list-style: none;
+	padding: 10vh 2vw;
+
+	@media screen and (min-width: 1024px) {
+		position: relative;
+		display: flex;
+		gap: 0.5rem;
+		padding: 0;
+		border: 0;
+		background-color: transparent;
+		transform: translateY(0);
+	}
+
+	&.show {
+		transform: translateY(0);
+	}
+
+	&__item {
+		flex: 1;
+	}
+
+	&__link {
+		padding: 0.8em 1em;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: var(--puri-color);
+		white-space: nowrap;
+		transition: background-color, color,
+			var(--puri-max-time) var(--puri-transi-timing-func);
+
+		@media screen and (min-width: 1024px) {
+			text-transform: capitalize;
+		}
+
+		&:hover {
+			background-color: var(--puri-dark-100);
+			color: var(--puri-primary-500);
+
+			@media screen and (min-width: 1024px) {
+				background-color: transparent;
+			}
+		}
+
+		&.active {
+			color: var(--puri-primary-500);
+		}
+	}
+}
+
+.icon-menu {
+	--puri-size-icon: 32px;
+	width: min-content;
+	height: min-content;
+	z-index: var(--puri-z-modal);
+
+	& > div {
+		width: var(--puri-size-icon);
+		height: var(--puri-size-icon);
+		cursor: pointer;
+		border-radius: var(--puri-s-radius);
+		fill: var(--puri-color);
+		color: var(--puri-color);
+	}
+
+	@media screen and (min-width: 1024px) {
+		display: none;
+	}
+}

@@ -1,0 +1,27 @@
+<ng-container>
+	<!-- Icon menu -->
+	<div class="relative icon-menu">
+		<div class="flex flex-col justify-center align-center" (click)="openMenu()">
+			<span class="icon cross-center">
+				<svg class="svg-icon svg-icon--md">
+					<use *ngIf="!isOpenMenu" href="/assets/icons/icons.svg#menu" />
+					<use *ngIf="isOpenMenu" href="/assets/icons/icons.svg#close" />
+				</svg>
+			</span>
+		</div>
+	</div>
+
+	<ul class="txt-center fixed top-0 left-0 m-0 menu" #refMenu>
+		<ng-container *ngFor="let link of links">
+			<li class="menu__item">
+				<a
+					[href]="[link.url]"
+					class="block menu__link"
+					[class.active]="activeSection === link.fragment"
+				>
+					{{ link.title }}
+				</a>
+			</li>
+		</ng-container>
+	</ul>
+</ng-container>

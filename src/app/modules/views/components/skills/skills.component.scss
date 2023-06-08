@@ -1,0 +1,44 @@
+.skills {
+	--puri-skill-size: 90px;
+
+	&__content {
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(var(--puri-skill-size), 1fr)
+		);
+	}
+
+	&__skill {
+		flex: 1;
+		min-width: var(--puri-skill-size);
+		height: 100%;
+		padding: 1em 0;
+		text-decoration: none;
+		border-radius: var(--puri-s-radius);
+		border: 1px solid transparent;
+		box-shadow: 2px 2px 12px var(--puri-dark-rgba),
+			-2px -2px 12px var(--puri-dark-rgba);
+		color: var(--puri-color);
+		transition: border-color, color, var(--puri-max-time) ease;
+		animation: floating var(--puri-animation-time) ease-in-out infinite;
+		will-change: transform;
+
+		&:hover {
+			color: var(--puri-link-color);
+			border-color: var(--puri-link-color);
+		}
+
+		&:nth-child(odd) {
+			animation-delay: 2s;
+		}
+
+		& .icon {
+			display: block;
+			width: 100%;
+			height: min-content;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0.5rem;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+<article class="skills">
+	<div class="grid gap-m skills__content">
+		<ng-container *ngFor="let skill of skills">
+			<a
+				[href]="skill.url"
+				target="_blank"
+				class="txt-center block skills__skill"
+				rel="nofollow noopener noreferrer"
+			>
+				<span class="icon cross-center">
+					<svg class="svg-icon svg-icon--xl">
+						<use [attr.xlink:href]="skill.urlIcon" />
+					</svg>
+				</span>
+				<small>{{ skill.title | titlecase }}</small>
+			</a>
+		</ng-container>
+	</div>
+</article>

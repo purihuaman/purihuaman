@@ -1,0 +1,13 @@
+// Skills animation
+@keyframes floating {
+	50% {
+		transform: translateY(-10px);
+	}
+}
+
+// Credits animation
+@keyframes scaleAnimation {
+	50% {
+		transform: scale(0.8);
+	}
+}

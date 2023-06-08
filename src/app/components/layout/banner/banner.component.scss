@@ -1,0 +1,94 @@
+.banner {
+	$puri-rwd-large: 1024px;
+	@media screen and (min-width: $puri-rwd-large) {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		align-items: center;
+		gap: 2rem;
+	}
+
+	&__container {
+		padding: 4rem 0 0;
+	}
+
+	&__left {
+		& .title {
+			--title: 36px;
+
+			--puri-gradient-from: var(--puri-secondary-500);
+			--puri-gradient-to: rgb(109 220 255 / 0);
+			--puri-gradient-stops: var(--puri-gradient-from), var(--puri-primary-500);
+			font-size: var(--title);
+			background-image: linear-gradient(to right, var(--puri-gradient-stops));
+			background-clip: text;
+			color: transparent;
+
+			@media screen and (min-width: 1024px) {
+				--title: 48px;
+			}
+		}
+
+		& .name {
+			font-size: 2rem;
+		}
+	}
+
+	&__right {
+		grid-template-columns: 1fr 75%;
+		overflow: hidden;
+
+		& .photo {
+			grid-column-start: 2;
+			width: 100%;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			height: 100%;
+			mix-blend-mode: revert;
+			border-radius: 50%;
+			border: 1px solid var(--puri-gray-rgba);
+			max-width: 50vw;
+
+			&__container {
+				height: 100%;
+				aspect-ratio: 1 / 1;
+
+				& source,
+				img {
+					width: 100%;
+					height: 100%;
+					mix-blend-mode: screen;
+				}
+			}
+
+			&__internal {
+				animation: turn1 10s linear infinite;
+				will-change: transform;
+
+				@keyframes turn1 {
+					to {
+						transform: rotate(1turn);
+					}
+				}
+			}
+
+			&__external {
+				animation: turn2 15s linear infinite;
+				will-change: transform;
+
+				@keyframes turn2 {
+					to {
+						transform: rotate(-1turn);
+					}
+				}
+			}
+		}
+	}
+}
+
+.bg-gradient {
+	min-height: 50vh;
+	width: 100%;
+	transform: translateY(-4rem);
+	z-index: -1;
+	background: var(--puri-gradient);
+}

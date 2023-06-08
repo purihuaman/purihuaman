@@ -1,0 +1,85 @@
+<!-- Banner container -->
+<section id="home">
+	<div class="banner__container">
+		<!-- Background -->
+		<div class="absolute top-0 bg-gradient"></div>
+
+		<!-- Dilimitador of page -->
+		<div class="content">
+			<!-- Banner -->
+			<section class="ml-n mr-n banner">
+				<!-- Banner content -->
+				<div class="flex flex-col txt-center gap-m banner__left">
+					<!-- Title -->
+					<div>
+						<h1 class="title h1">Desarrollador FrontEnd</h1>
+					</div>
+
+					<!-- Description -->
+					<div>
+						<p class="name h2">Pedro Purihuaman</p>
+					</div>
+
+					<!-- Buttons -->
+					<div
+						class="in-flex align-center justify-center flex-wrap gap-n banner__buttons"
+					>
+						<a href="#projects" class="btn btn-primary">Proyectos</a>
+						<button class="btn btn-secondary">Contactame</button>
+					</div>
+				</div>
+
+				<!-- Banner photo -->
+				<div class="relative grid gap-l pt-xl banner__right">
+					<img
+						src="assets/images/puriihuaman.png"
+						alt="Pedro Purihuaman"
+						class="block mx-auto photo"
+					/>
+					<!--  -->
+					<div class="absolute photo__container">
+						<!-- Image internal -->
+
+						<picture>
+							<source
+								media="(min-width: 1024px)"
+								srcset="/assets/images/interno.png"
+								class="absolute"
+							/>
+							<source
+								media="(max-width: 1024px)"
+								srcset="/assets/images/interno-small.png"
+								class="absolute"
+							/>
+							<img
+								src="/assets/images/interno.png"
+								alt=""
+								class="absolute photo__internal"
+							/>
+						</picture>
+
+						<!-- Image external -->
+						<picture>
+							<source
+								media="(min-width: 1024px)"
+								srcset="/assets/images/exterior.png"
+								class="absolute"
+							/>
+							<source
+								media="(max-width: 1024px)"
+								srcset="/assets/images/exterior-small.png"
+								class="absolute"
+							/>
+
+							<img
+								src="/assets/images/exterior.png"
+								alt=""
+								class="absolute photo__external"
+							/>
+						</picture>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</section>

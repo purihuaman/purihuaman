@@ -1,0 +1,81 @@
+<article class="card animation">
+	<header class="p-0 card__header">
+		<img
+			[srcset]="project.imageWebp"
+			[src]="project.image"
+			class="card__image"
+			[alt]="project.titleRepo | titlecase"
+		/>
+	</header>
+
+	<div class="flex flex-col p-m card__body">
+		<!-- Date -->
+		<div class="mb-s">
+			<small class="flex align-center gap-s card__date">
+				<span class="icon cross-center">
+					<svg class="svg-icon svg-calendar">
+						<use href="assets/icons/icons.svg#calendar"></use>
+					</svg>
+				</span>
+				<span>{{ project.date }}</span>
+			</small>
+		</div>
+
+		<!-- Title -->
+		<h4 class="mb-s capitalize">{{ project.titleRepo }}</h4>
+
+		<footer class="flex flex-wrap mt-auto card__footer">
+			<!-- link of the page and repository -->
+			<div class="card__links">
+				<p class="mb-s">Links</p>
+				<div class="flex align-center justify-center justify-start gap-s">
+					<a
+						[href]="project.linkPage"
+						[title]="project.titleRepo | titlecase"
+						rel="nofollow noopener noreferrer"
+						target="_blank"
+						class="txt-decoration-none"
+					>
+						<span class="icon cross-center">
+							<svg class="svg-icon">
+								<use href="assets/icons/icons.svg#link"></use>
+							</svg>
+						</span>
+					</a>
+
+					<a
+						[href]="[project.urlGithub || project.urlCode]"
+						[title]="project.titleRepo | titlecase"
+						rel="nofollow noopener noreferrer"
+						target="_blank"
+						class="text-decoration-none"
+					>
+						<span class="icon cross-center">
+							<svg class="svg-icon">
+								<use href="assets/icons/icons.svg#github"></use>
+							</svg>
+						</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Tech -->
+			<div class="card__author">
+				<p class="mb-s">Creado con:</p>
+				<div class="navbar bg-body-tertiary py-0">
+					<div class="flex justify-center justify-start gap-s flex-wrap p-0">
+						<ng-container *ngFor="let tech of project.languages">
+							<span class="icon cross-center">
+								<svg class="svg-icon">
+									<use
+										[attr.xlink:href]="'/assets/icons/icons.svg#' + tech"
+									></use>
+								</svg>
+							</span>
+						</ng-container>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</article>

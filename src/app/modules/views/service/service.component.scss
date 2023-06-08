@@ -1,0 +1,8 @@
+.services {
+	min-height: calc(100vh - var(--puri-header-height));
+	padding-top: var(--puri-header-height);
+
+	&__content {
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	}
+}

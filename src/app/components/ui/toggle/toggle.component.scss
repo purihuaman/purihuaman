@@ -1,0 +1,13 @@
+.toggle {
+	--puri-size-toggle: 32px;
+	color: var(--puri-warning-400);
+	width: fit-content;
+	height: fit-content;
+	border-radius: var(--puri-s-radius);
+
+	&__icon {
+		width: var(--puri-size-toggle);
+		height: var(--puri-size-toggle);
+		cursor: pointer;
+	}
+}

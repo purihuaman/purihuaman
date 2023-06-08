@@ -1,0 +1,76 @@
+:root {
+	// NOTE: ==> Height <==
+	--min-height: 100vh;
+	--puri-max-width: 1200px;
+	--puri-min-width: 320px;
+	--puri-header-height: 4rem;
+
+	// NOTE: ==> Z-index <==
+	--puri-z-back: -1;
+	--puri-z-normal: 1;
+	--puri-z-tooltip: 10;
+	--puri-z-fixed: 100;
+	--puri-z-modal: 1000;
+
+	// NOTE: ==> Radius
+	--puri-s-radius: 0.4rem;
+	--puri-n-radius: 0.8rem;
+	--puri-full-radius: 50%;
+
+	// NOTE: Spaces
+	--puri-cero: 0;
+	--puri-small: 0.5rem;
+	--puri-normal: 1rem;
+	--puri-space-normal: 1rem;
+	--puri-medium: 1.5rem;
+	--puri-large: 2rem;
+	--puri-xlarge: 2.5rem;
+	--puri-xxlarge: 3rem;
+
+	// NOTE: ==> Time transition
+	--puri-min-time: 250ms;
+	--puri-max-time: 450ms;
+
+	// NOTE: ==> Time animation
+	--puri-animation-time: 3000ms;
+
+	// NOTE: ==> Box shadown
+	--puri-dark-shadow: 2px 2px 12px var(--puri-dark-rgba),
+		-2px -2px 12px var(--puri-dark-rgba);
+	--puri-primary-shadow: 2px 2px 12px var(--puri-primary-rgba),
+		-2px -2px 12px var(--puri-primary-rgba);
+
+	// NOTE: ==> Fonts <==
+	--heading-font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu,
+		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+	--main-font: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu,
+		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+	// NOTE: Breakpoints
+	--puri-rwd-small: 360px;
+	--puri-rwd-medium: 640px;
+	--puri-rwd-large: 1024px;
+	--puri-rwd-xlarge: 1200px;
+}
+
+// TODO: ==> Fonts <==
+
+@font-face {
+	font-family: "Inter";
+	font-weight: normal;
+	src: local("Inter"), url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+		url("/assets/fonts/Inter-Regular.woff") format("woff"),
+		url("/assets/fonts/Inter-Regular.ttf") format("truetype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Poppins";
+	font-weight: 300;
+	src: local("Poppins"),
+		url("/assets/fonts/Poppins-Light.woff2") format("woff2"),
+		url("/assets/fonts/Poppins-Light.woff") format("woff"),
+		url("/assets/fonts/Poppins-Light.ttf") format("truetype");
+	font-display: swap;
+}

@@ -1,0 +1,31 @@
+.footer {
+	transition: border var(--puri-min-time) ease-in-out;
+	border-top: 1px solid var(--puri-dark-100);
+
+	&__content {
+		@media screen and (min-width: 1024px) {
+			justify-content: space-between;
+		}
+	}
+
+	& .bottom-return {
+		width: 38px;
+		height: min-content;
+		background-color: var(--puri-primary-500);
+		fill: var(--puri-primary-50);
+		color: var(--puri-primary-50);
+		border-radius: var(--puri-s-radius);
+		transform: translateY(10vh);
+		cursor: pointer;
+		transition: background-color, transform,
+			var(--puri-max-time) var(--puri-transi-timing-func);
+
+		&:hover {
+			background-color: var(--puri-primary-600);
+		}
+
+		&.hidden {
+			transform: translateY(0);
+		}
+	}
+}

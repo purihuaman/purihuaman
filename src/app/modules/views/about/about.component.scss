@@ -1,0 +1,111 @@
+.about {
+	min-height: calc(100vh - var(--puri-header-height));
+	padding-top: var(--puri-header-height);
+	line-height: 1.4;
+
+	& .photo {
+		&__container {
+			border-radius: var(--puri-full-radius);
+			overflow: hidden;
+		}
+	}
+
+	&__link {
+		color: var(--puri-primary-500);
+		vertical-align: middle;
+	}
+
+	& .icon-link {
+		--size-svg: 18px;
+	}
+
+	& .tech,
+	& .experience {
+		flex: 1;
+	}
+
+	& .experience {
+		&__header {
+			transition: border-color var(--puri-transi-duration)
+				var(--puri-transi-timing-func);
+			border-bottom: var(--puri-border);
+		}
+
+		&__item {
+			overflow: hidden;
+			border-radius: var(--puri-s-radius);
+			box-shadow: var(--puri-dark-shadow);
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__details {
+			--step-0: clamp(1.06rem, calc(1.03rem + 0.19vw), 1.25rem);
+			--step-1: clamp(1.2rem, calc(1.1rem + 0.47vw), 1.67rem);
+			--step-2: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
+			--step-3: clamp(1.51rem, calc(1.22rem + 1.45vw), 2.96rem);
+			--accordion-max-height: 100px;
+			--accordion-min-height: calc(
+				var(--step-0) + var(--step-1) + var(--step-0)
+			);
+
+			border: thin solid var(--puri-border-color);
+			overflow: hidden;
+			transform-origin: top;
+			animation: accordion-close 0.4s ease-in-out;
+			transition: border-color var(--puri-transi-duration)
+				var(--puri-transi-timing-func);
+
+			&[open] {
+				animation: accordion-open 0.3s ease-in-out;
+				transform-origin: top;
+
+				color: var(--puri-primary-500);
+				& .summary::before {
+					transform: rotate(90deg);
+					transition: 0.45s transform ease;
+				}
+			}
+
+			& .summary {
+				position: relative;
+				display: block;
+				// font-size: var(--step-1);
+				cursor: pointer;
+				transition: all 0.3s ease;
+				list-style: none;
+
+				&::before {
+					content: "▶";
+					position: absolute;
+					top: var(--step-0);
+					left: var(--step--2);
+					transform: rotate(0);
+					transform-origin: center;
+					transition: 0.2s transform ease;
+				}
+			}
+		}
+	}
+}
+
+@keyframes accordion-close {
+	0% {
+		min-height: var(--accordion-max-height);
+	}
+
+	100% {
+		min-height: var(--accordion-min-height);
+	}
+}
+
+@keyframes accordion-open {
+	0% {
+		max-height: var(--accordion-min-height);
+	}
+	100% {
+		max-height: var(--accordion-max-height);
+	}
+}

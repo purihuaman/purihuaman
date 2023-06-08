@@ -1,0 +1,13 @@
+.author {
+	flex: 1;
+	color: var(--puri-dark-500);
+
+	&__title {
+		text-decoration: none;
+		color: var(--puri-primary-500);
+	}
+
+	.semibold {
+		font-weight: bold;
+	}
+}

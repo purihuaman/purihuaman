@@ -1,0 +1,29 @@
+.network {
+	$puri-time: var(--puri-animation-time);
+
+	& .links {
+		animation: floating $puri-time ease-in-out infinite;
+
+		&:hover::after {
+			content: attr(title);
+			display: block;
+			font-size: small;
+			position: absolute;
+			left: 50%;
+			width: max-content;
+			background-color: var(--puri-primary-500);
+			color: var(--puri-primary-50);
+			padding: 0.5em;
+			border-radius: var(--puri-s-radius);
+			transform: translateX(-50%);
+		}
+	}
+
+	& .linkedin {
+		animation-delay: calc($puri-time / 2);
+	}
+
+	& .github {
+		color: var(--puri-color);
+	}
+}

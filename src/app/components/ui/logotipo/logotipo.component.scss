@@ -1,0 +1,14 @@
+.logotipo {
+	animation: scaleAnimation var(--puri-animation-time) ease-in-out infinite;
+	will-change: transform;
+
+	&__container {
+		height: 100%;
+		transform: translateX(-15px);
+	}
+
+	&__image {
+		margin-right: auto;
+		aspect-ratio: 1 / 1;
+	}
+}
