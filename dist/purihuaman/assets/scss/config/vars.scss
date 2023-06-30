@@ -27,6 +27,15 @@
 	--puri-xlarge: 2.5rem;
 	--puri-xxlarge: 3rem;
 
+	// Modificado espace
+	--puri-0-space: 0;
+	--puri-s-space: 0.5rem;
+	--puri-n-space: 1rem;
+	--puri-m-space: 1.5rem;
+	--puri-l-space: 2rem;
+	--puri-xl-space: 2.5rem;
+	--puri-xxl-space: 3rem;
+
 	// NOTE: ==> Time transition
 	--puri-min-time: 250ms;
 	--puri-max-time: 450ms;
@@ -41,11 +50,13 @@
 		-2px -2px 12px var(--puri-primary-rgba);
 
 	// NOTE: ==> Fonts <==
-	--heading-font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu,
-		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	--heading-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 
-	--main-font: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Ubuntu,
-		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	--main-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+		"Segoe UI Symbol";
 
 	// NOTE: Breakpoints
 	--puri-rwd-small: 360px;
@@ -53,24 +64,25 @@
 	--puri-rwd-large: 1024px;
 	--puri-rwd-xlarge: 1200px;
 }
+$puri-rwd-medium: 640px;
 
 // TODO: ==> Fonts <==
 
 @font-face {
 	font-family: "Inter";
-	font-weight: normal;
-	src: local("Inter"), url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
-		url("/assets/fonts/Inter-Regular.woff") format("woff"),
-		url("/assets/fonts/Inter-Regular.ttf") format("truetype");
+	font-weight: bold;
+	src: local("Inter"), url("/assets/fonts/Inter-Bold.woff2") format("woff2"),
+		url("/assets/fonts/Inter-Bold.woff") format("woff"),
+		url("/assets/fonts/Inter-Bold.ttf") format("truetype");
 	font-display: swap;
 }
 
 @font-face {
 	font-family: "Poppins";
-	font-weight: 300;
+	font-weight: normal;
 	src: local("Poppins"),
-		url("/assets/fonts/Poppins-Light.woff2") format("woff2"),
-		url("/assets/fonts/Poppins-Light.woff") format("woff"),
-		url("/assets/fonts/Poppins-Light.ttf") format("truetype");
+		url("/assets/fonts/Poppins-Regular.woff2") format("woff2"),
+		url("/assets/fonts/Poppins-Regular.woff") format("woff"),
+		url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
 	font-display: swap;
 }
