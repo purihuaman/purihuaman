@@ -4,6 +4,9 @@
 		<!-- Background -->
 		<div class="absolute top-0 bg-gradient"></div>
 
+		<!-- Modal -->
+		<app-modal *ngIf="openModal$ | async"></app-modal>
+
 		<!-- Dilimitador of page -->
 		<div class="content">
 			<!-- Banner -->
@@ -25,59 +28,23 @@
 						class="in-flex align-center justify-center flex-wrap gap-n banner__buttons"
 					>
 						<a href="#projects" class="btn btn-primary">Proyectos</a>
-						<button class="btn btn-secondary">Contactame</button>
+						<button class="btn btn-secondary" (click)="openModal()">
+							Contactame
+						</button>
 					</div>
 				</div>
 
 				<!-- Banner photo -->
-				<div class="relative grid gap-l pt-xl banner__right">
+				<div class="pt-xl banner__right">
 					<img
 						src="assets/images/puriihuaman.png"
 						alt="Pedro Purihuaman"
+						width="48"
+						height="48"
+						loading="lazy"
 						class="block mx-auto photo"
 					/>
 					<!--  -->
-					<div class="absolute photo__container">
-						<!-- Image internal -->
-
-						<picture>
-							<source
-								media="(min-width: 1024px)"
-								srcset="/assets/images/interno.png"
-								class="absolute"
-							/>
-							<source
-								media="(max-width: 1024px)"
-								srcset="/assets/images/interno-small.png"
-								class="absolute"
-							/>
-							<img
-								src="/assets/images/interno.png"
-								alt=""
-								class="absolute photo__internal"
-							/>
-						</picture>
-
-						<!-- Image external -->
-						<picture>
-							<source
-								media="(min-width: 1024px)"
-								srcset="/assets/images/exterior.png"
-								class="absolute"
-							/>
-							<source
-								media="(max-width: 1024px)"
-								srcset="/assets/images/exterior-small.png"
-								class="absolute"
-							/>
-
-							<img
-								src="/assets/images/exterior.png"
-								alt=""
-								class="absolute photo__external"
-							/>
-						</picture>
-					</div>
 				</div>
 			</section>
 		</div>

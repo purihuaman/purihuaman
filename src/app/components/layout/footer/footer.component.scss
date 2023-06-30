@@ -1,6 +1,6 @@
 .footer {
 	transition: border var(--puri-min-time) ease-in-out;
-	border-top: 1px solid var(--puri-dark-100);
+	border-top: var(--puri-border);
 
 	&__content {
 		@media screen and (min-width: 1024px) {
@@ -12,8 +12,8 @@
 		width: 38px;
 		height: min-content;
 		background-color: var(--puri-primary-500);
-		fill: var(--puri-primary-50);
-		color: var(--puri-primary-50);
+		fill: var(--puri-white);
+		color: var(--puri-white);
 		border-radius: var(--puri-s-radius);
 		transform: translateY(10vh);
 		cursor: pointer;

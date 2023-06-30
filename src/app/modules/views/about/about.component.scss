@@ -1,12 +1,23 @@
 .about {
+	$puri-rwd-medium: 640px;
+	--photo-size: 25vh;
+
+	@media screen and (min-width: $puri-rwd-medium) {
+		--photo-size: 50vw;
+	}
+
 	min-height: calc(100vh - var(--puri-header-height));
 	padding-top: var(--puri-header-height);
-	line-height: 1.4;
 
 	& .photo {
 		&__container {
 			border-radius: var(--puri-full-radius);
 			overflow: hidden;
+
+			& img {
+				display: block;
+				width: var(--photo-size);
+			}
 		}
 	}
 
@@ -77,8 +88,12 @@
 				transition: all 0.3s ease;
 				list-style: none;
 
+				& strong {
+					vertical-align: middle;
+				}
+
 				&::before {
-					content: "▶";
+					content: "\25B6";
 					position: absolute;
 					top: var(--step-0);
 					left: var(--step--2);

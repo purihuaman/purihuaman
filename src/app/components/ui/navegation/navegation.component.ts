@@ -6,7 +6,6 @@ import {
 	ViewChild,
 	inject,
 } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 
 @Component({
 	selector: "app-navegation",
@@ -15,13 +14,12 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class NavegationComponent {
 	private renderer2 = inject(Renderer2);
-	private route = inject(ActivatedRoute);
 
 	isOpenMenu: boolean = false;
 	@ViewChild("refMenu") elementRefMenu: ElementRef = new ElementRef("");
-	@ViewChild("sectionRef") sectionRef: ElementRef = new ElementRef("");
+	// @ViewChild("sectionRef") sectionRef: ElementRef = new ElementRef("");
 
-	links: any[] = [
+	links: Link[] = [
 		{ url: "#home", title: "inicio", fragment: "home" },
 		{ url: "#about", title: "sobre mí", fragment: "about" },
 		{ url: "#projects", title: "proyectos", fragment: "projects" },
@@ -41,13 +39,8 @@ export class NavegationComponent {
 
 	activeSection: string = ""; // Sección activa actualmente
 
-	constructor() {}
-
 	@HostListener("window:scroll", [])
 	onScroll(): void {
-		// const sections =
-		// this.elementRef.nativeElement.querySelectorAll("#sectionRef");
-
 		const sections = Array.from(document.querySelectorAll("section")).filter(
 			(el) => el.getAttribute("id")
 		);
@@ -62,9 +55,14 @@ export class NavegationComponent {
 			if (
 				scrollPosition >= sectionTop - offset &&
 				scrollPosition < sectionTop + sectionHeight
-			) {
+			)
 				this.activeSection = section.id;
-			}
 		});
 	}
+}
+
+interface Link {
+	url: string;
+	title: string;
+	fragment: string;
 }

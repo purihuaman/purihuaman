@@ -6,13 +6,14 @@
 		outline: none;
 		font-family: inherit;
 		font-size: inherit;
-		padding: 0.8em 1.5em;
+		padding: 0.5em 1.5em;
 		border-radius: var(--puri-s-radius);
 		text-decoration: none;
 		cursor: pointer;
-		border: 1px solid transparent;
-		transition: background-color, transform, border,
-			var(--puri-min-time) ease-in-out;
+		line-height: inherit;
+		border: var(--puri-border-width) var(--puri-border-style) transparent;
+		transition: background-color, transform, border-color,
+			var(--puri-transi-duration) var(--puri-transi-timing-func);
 		transform: scale(1);
 
 		&:active {
@@ -21,9 +22,9 @@
 	}
 
 	.btn-primary {
-		color: var(--puri-primary-50);
+		color: var(--puri-white);
 		background-color: var(--puri-primary-500);
-		border: 1px solid var(--puri-primary-500);
+		border-color: var(--puri-primary-500);
 
 		&:hover {
 			border-color: var(--puri-primary-600);
@@ -37,8 +38,9 @@
 		border-color: currentColor;
 
 		&:hover {
-			color: var(--puri-primary-600);
-			background-color: transparent;
+			color: var(--puri-white);
+			border-color: var(--puri-primary-500);
+			background-color: var(--puri-primary-500);
 		}
 	}
 }

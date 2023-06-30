@@ -33,9 +33,6 @@ const routes: Routes = [
 			},
 		],
 	},
-	// { path: "#about", component: AboutComponent, title: "Sobre Mí" },
-	// { path: "#services", component: ServiceComponent, title: "Servicios" },
-	// { path: "#projects", component: ProjectComponent, title: "Proyectos" },
 ];
 
 @NgModule({

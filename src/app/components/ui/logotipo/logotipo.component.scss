@@ -4,11 +4,11 @@
 
 	&__container {
 		height: 100%;
-		transform: translateX(-15px);
 	}
 
 	&__image {
 		margin-right: auto;
 		aspect-ratio: 1 / 1;
+		height: calc(var(--puri-header-height) - var(--puri-n-space));
 	}
 }

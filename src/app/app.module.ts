@@ -12,8 +12,10 @@ import { LogotipoComponent } from "@ui/logotipo/logotipo.component";
 import { AuthorComponent } from "@ui/author/author.component";
 import { CreditsComponent } from "@ui/credits/credits.component";
 import { NavegationComponent } from "@ui/navegation/navegation.component";
-import { BannerComponent } from "./components/layout/banner/banner.component";
-import { NetworkComponent } from "./components/ui/network/network.component";
+import { BannerComponent } from "@layout/banner/banner.component";
+import { NetworkComponent } from "@ui/network/network.component";
+import { ModalComponent } from "@ui/modal/modal.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
 	declarations: [
@@ -27,6 +29,7 @@ import { NetworkComponent } from "./components/ui/network/network.component";
 		NavegationComponent,
 		BannerComponent,
 		NetworkComponent,
+		ModalComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
 	providers: [],

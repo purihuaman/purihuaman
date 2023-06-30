@@ -6,6 +6,8 @@ html {
 
 body {
 	overflow-x: hidden;
+	transition: background-color var(--puri-transi-duration)
+		var(--puri-transi-timing-func);
 }
 
 h1,
