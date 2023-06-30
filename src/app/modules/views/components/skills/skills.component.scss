@@ -16,11 +16,12 @@
 		text-decoration: none;
 		border-radius: var(--puri-s-radius);
 		border: 1px solid transparent;
-		box-shadow: 2px 2px 12px var(--puri-dark-rgba),
-			-2px -2px 12px var(--puri-dark-rgba);
+		box-shadow: var(--puri-dark-shadow);
 		color: var(--puri-color);
-		transition: border-color, color, var(--puri-max-time) ease;
-		animation: floating var(--puri-animation-time) ease-in-out infinite;
+		transition: border-color, color, box-shadow,
+			var(--puri-transi-duration) var(--puri-transi-timing-func);
+		animation: floating var(--puri-animation-time)
+			var(--puri-transi-timing-func) infinite;
 		will-change: transform;
 
 		&:hover {
@@ -30,15 +31,6 @@
 
 		&:nth-child(odd) {
 			animation-delay: 2s;
-		}
-
-		& .icon {
-			display: block;
-			width: 100%;
-			height: min-content;
-			margin-left: auto;
-			margin-right: auto;
-			margin-bottom: 0.5rem;
 		}
 	}
 }

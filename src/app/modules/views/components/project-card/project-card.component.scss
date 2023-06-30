@@ -1,13 +1,14 @@
 .card {
 	height: 100%;
 	color: var(--puri-color);
-	border: 1px solid var(--puri-dark-100);
+	border: var(--puri-border);
 	border-radius: var(--puri-s-radius);
 	box-shadow: var(--puri-dark-shadow);
 	overflow: hidden;
 
 	&__image {
 		aspect-ratio: 16 / 9;
+		object-fit: cover;
 	}
 
 	&__date {

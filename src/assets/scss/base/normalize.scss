@@ -48,8 +48,8 @@ code,
 kbd,
 pre,
 samp {
-	font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
-		monospace;
+	font-family: monospace, ui-monospace, SFMono-Regular, Consolas,
+		"Liberation Mono", Menlo;
 	font-size: 1em;
 }
 a {
@@ -120,7 +120,8 @@ textarea {
 	overflow: auto;
 }
 fieldset {
-	padding: 0.35em 0.75em 0.625em;
+	margin: 0;
+	padding: 0;
 }
 details {
 	display: block;

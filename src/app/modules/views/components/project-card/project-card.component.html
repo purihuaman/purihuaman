@@ -3,8 +3,11 @@
 		<img
 			[srcset]="project.imageWebp"
 			[src]="project.image"
-			class="card__image"
 			[alt]="project.titleRepo | titlecase"
+			width="200"
+			height="180"
+			loading="lazy"
+			class="card__image"
 		/>
 	</header>
 
@@ -22,7 +25,7 @@
 		</div>
 
 		<!-- Title -->
-		<h4 class="mb-s capitalize">{{ project.titleRepo }}</h4>
+		<h3 class="mb-s txt-center capitalize">{{ project.titleRepo }}</h3>
 
 		<footer class="flex flex-wrap mt-auto card__footer">
 			<!-- link of the page and repository -->

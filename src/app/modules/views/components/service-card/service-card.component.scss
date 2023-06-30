@@ -1,7 +1,7 @@
 .card {
 	min-height: 100%;
 	color: var(--puri-color);
-	background-color: var(--puri-dark-100);
+	background-color: var(--puri-dark-200);
 	border-radius: var(--puri-n-radius);
 	border: 1px solid transparent;
 	box-shadow: var(--puri-dark-shadow);
@@ -20,6 +20,11 @@
 
 	&__image {
 		aspect-ratio: 16 / 9;
-		border-bottom: 1px solid var(--puri-dark-200);
+		border-bottom: var(--puri-border);
+	}
+
+	&__svg {
+		width: 100%;
+		height: 100%;
 	}
 }

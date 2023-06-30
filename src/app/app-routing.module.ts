@@ -6,6 +6,7 @@ const routes: Routes = [
 		path: "",
 		loadChildren: () =>
 			import("@modules/views/views.module").then((mod) => mod.ViewsModule),
+		title: "Bienvenid@s - Purihuaman",
 	},
 ];
 

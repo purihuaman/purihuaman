@@ -1,9 +1,17 @@
-<article class="card animation">
-	<img [src]="service.image" class="block card__image" [alt]="service.title" />
+<article class="card animation txt-balance">
+	<img
+		[src]="service.image"
+		[alt]="service.title"
+		width="200"
+		height="180"
+		loading="lazy"
+		class="block card__image"
+	/>
+
 	<div class="p-m card__body">
-		<h4 class="txt-center mb-s card__title">
+		<h3 class="txt-center mb-s card__title">
 			{{ service.title | titlecase }}
-		</h4>
+		</h3>
 		<p class="card__description">{{ service.description }}</p>
 	</div>
 </article>

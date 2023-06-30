@@ -9,18 +9,21 @@ import { Service } from "@core/interfaces/service";
 export class ServiceComponent {
 	serviceList: Service[] = [
 		{
+			key: "design",
 			title: "diseño web",
 			description:
 				"Maqueto tus diseños estáticos, los convierto en sitios mágicos y aplicaciones web responsivas, rápidas e accesibles.",
 			image: "assets/images/web-design.svg",
 		},
 		{
+			key: "programming",
 			title: "programación web",
 			description:
 				"Desarrollo sitios y aplicaciones web. Te ayudo a construir y hacer realidad tu proyecto de principio a fin.",
 			image: "assets/images/web-programming.svg",
 		},
 		{
+			key: "development",
 			title: "desarrollo eficaz",
 			description:
 				"El diseño es el principal fuerte ya que me encargo que tu página web siga los estándares y tendencias internacionales.",

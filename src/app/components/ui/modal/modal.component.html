@@ -1,0 +1,18 @@
+<div
+	class="fixed top-0 flex justify-center align-center modal"
+	(click)="closeModal()"
+	#modalRef
+>
+	<div class="content">
+		<div class="flex justify-center align-center modal__content">
+			<article
+				class="txt-center p-l flex flex-col justify-center modal__card"
+				#modalCard
+			>
+				<h2 class="mb-l">Contactame</h2>
+
+				<app-network></app-network>
+			</article>
+		</div>
+	</div>
+</div>

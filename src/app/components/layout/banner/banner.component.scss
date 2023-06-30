@@ -1,6 +1,14 @@
 .banner {
 	$puri-rwd-large: 1024px;
+	$puri-rwd-medium: 640px;
+	--width-photo: 50vw;
+
+	@media screen and (min-width: $puri-rwd-medium) {
+		--width-photo: 40vw;
+	}
+
 	@media screen and (min-width: $puri-rwd-large) {
+		--width-photo: 25vw;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		align-items: center;
@@ -34,19 +42,18 @@
 	}
 
 	&__right {
-		grid-template-columns: 1fr 75%;
+		// grid-template-columns: 1fr 75%;
+		grid-column-start: 2;
 		overflow: hidden;
 
 		& .photo {
-			grid-column-start: 2;
-			width: 100%;
 			aspect-ratio: 1/1;
 			object-fit: cover;
 			height: 100%;
 			mix-blend-mode: revert;
-			border-radius: 50%;
-			border: 1px solid var(--puri-gray-rgba);
-			max-width: 50vw;
+			border-radius: var(--puri-full-radius);
+			border: var(--puri-border);
+			width: var(--width-photo);
 
 			&__container {
 				height: 100%;
